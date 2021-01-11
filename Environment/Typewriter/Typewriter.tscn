@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Environment/ActionListener.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/Typewriter/typewriter_test.png" type="Texture" id=2]
+[ext_resource path="res://Environment/Typewriter/Typewriter.gd" type="Script" id=3]
+
+[node name="Typewriter" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -6.06161, 2.02058 )
+scale = Vector2( 0.323845, 0.287227 )
+texture = ExtResource( 2 )
+
+[node name="ActionListener" parent="." instance=ExtResource( 1 )]
+[connection signal="action_executed" from="ActionListener" to="." method="_on_ActionListener_action_executed"]
