@@ -4,7 +4,7 @@ class_name Character
 
 var y_axis = 0
 var x_axis = 0
-var SPEED = 300
+var SPEED = 500
 var action = FuncRef.new()
 
 var context = {}
