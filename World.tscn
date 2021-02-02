@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Characters/ControllableCharacter.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Environment/Typewriter/Typewriter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/TypewriterStation/TypewriterStation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Interface/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World.gd" type="Script" id=4]
 
@@ -15,7 +15,14 @@ format = 1
 [node name="ControllableCharacter" parent="." instance=ExtResource( 1 )]
 position = Vector2( 831.8, 460.145 )
 
-[node name="Typewriter" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1208.77, 309.713 )
-
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="TypewriterStation" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1219.5, 465.956 )
+
+[node name="Orders" type="Node" parent="."]
+
+[node name="OrderTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="OrderTimer" to="." method="_on_OrderTimer_timeout"]
