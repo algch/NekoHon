@@ -18,6 +18,10 @@ func _ready():
 	self.wait_time = randi() % (max_time - min_time + 1) + min_time
 	self.timer.set_wait_time(self.wait_time)
 	self.timer.set_autostart(true)
+	self.timer.connect("timeout", self, "_on_timer_timeout")
 	self.add_child(timer)
 
 	emit_signal("order_created", self)
+
+func _on_timer_timeout():
+	self.queue_free()
