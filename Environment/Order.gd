@@ -4,24 +4,25 @@ class_name Order
 
 signal order_created
 
-# Path of stations to become fulfilled
-var station_path = []
+var components = []
 
-var min_time = 10
-var max_time = 20
+var min_time = 30
+var max_time = 60
 
 var wait_time = 0.0
 
-var timer = Timer.new()
+class Component:
+	var id = ""
+	var image_path = ""
+
+	func _init(_id, _image_path):
+		self.id = _id
+		self.image_path = "res://Interface/Sprites/Components/" + _image_path
+
+func init(_components):
+	self.components = _components
 
 func _ready():
 	self.wait_time = randi() % (max_time - min_time + 1) + min_time
-	self.timer.set_wait_time(self.wait_time)
-	self.timer.set_autostart(true)
-	self.timer.connect("timeout", self, "_on_timer_timeout")
-	self.add_child(timer)
 
 	emit_signal("order_created", self)
-
-func _on_timer_timeout():
-	self.queue_free()
