@@ -14,3 +14,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="ComponentContainer" type="Position2D" parent="."]
+position = Vector2( -51.4616, 16.1205 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}

@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Characters/Character.gd"
 }, {
+"base": "Sprite",
+"class": "Component",
+"language": "GDScript",
+"path": "res://Environment/Component.gd"
+}, {
 "base": "Node",
 "class": "Order",
 "language": "GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Character": "",
+"Component": "",
 "Order": "",
 "Station": ""
 }

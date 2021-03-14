@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Environment/Component.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Sprites/Components/a.png" type="Texture" id=2]
+
+[node name="Component" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
