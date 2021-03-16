@@ -13,14 +13,16 @@ func _ready():
 	add_child(self.timer)
 
 	self.expected_previous_paths = [
-		["papel", "cortar", "tinta"],
-		["papel", "tinta", "cortar"],
-		["tinta", "papel", "cortar"],
+		["papel"],
+		["tinta", "papel"],
+		["papel", "tinta"],
+		["pinceles", "papel"],
+		["papel", "pinceles"],
 	]
 
 func _on_timer_timeout():
 	if character_ref:
-		character_ref.replace_component(Component.instance().init(character_ref.current_component, "escribir", "a.png"))
+		character_ref.replace_component(Component.instance().init(character_ref.current_component, "cortar", "c.png"))
 
 func execute_action(character):
 	if not character.current_component:

@@ -5,7 +5,6 @@ signal component_grabbed(stuff)
 
 class_name Character
 
-const Component = preload("res://Environment/Component.tscn")
 
 var y_axis = 0
 var x_axis = 0
@@ -14,7 +13,7 @@ var execute_action = FuncRef.new()
 var cancel_action = FuncRef.new()
 
 # component holded by the character
-var current_component = Component.instance()
+var current_component = Component.new()
 
 func replace_component(component):
 	self.current_component = component

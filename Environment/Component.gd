@@ -4,7 +4,20 @@ class_name Component
 
 var path = []
 
-func init(previous_component = Component.instance(), path_identifier = "", image_name=null):
+class Recipe:
+	var expected_paths = []
+	var name = ""
+	var image = null
+
+	func _init(_name, _paths, _image_name):
+		self.name = _name
+		self.expected_paths = _paths
+		var texture = load("res://Interface/Sprites/Components/" + _image_name)
+		if texture:
+			self.image = texture
+
+
+func init(previous_component = Component.new(), path_identifier = "", image_name = null):
 	if previous_component:
 		self.path = previous_component.path
 
@@ -16,6 +29,3 @@ func init(previous_component = Component.instance(), path_identifier = "", image
 			self.texture = image
 
 	return self
-
-func _ready():
-	pass

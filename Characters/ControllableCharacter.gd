@@ -29,4 +29,3 @@ func _unhandled_input(event):
 	if event.is_action_released("ui_select") and self.cancel_action.is_valid():
 		print("cancelling action")
 		self.cancel_action.call_func(self)
-

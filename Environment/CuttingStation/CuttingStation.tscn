@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Environment/CuttingStation/CuttingStation.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Theme.tres" type="Theme" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 120.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50, 50 )
+
+[node name="CuttingStation" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.933333, 0.494118, 0.172549, 1 )
+polygon = PoolVector2Array( -7.42264, 25.0825, -0.43338, 0.620132, 10.0505, 25.0825, 20.9712, 35.5664, 38.4443, 33.3822, 41.5021, 11.9777, 30.1446, 1.05696, 15.7292, -10.3006, 7.42953, -23.4054, 2.62442, -42.189, -0.43338, -48.7414, -7.85947, -41.7522, -7.85947, -25.1527, -15.2855, -11.1742, -28.3904, 1.49379, -36.6901, 14.5986, -32.3218, 35.1295, -16.1592, 34.2559 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -48.4879
+margin_top = 57.2245
+margin_right = 51.5121
+margin_bottom = 75.2245
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

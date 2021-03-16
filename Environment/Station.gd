@@ -21,6 +21,10 @@ func execute_action(_character):
 func cancel_action(_character):
 	pass
 
+func _ready():
+	self.connect("body_entered", self, "_on_Station_body_entered")
+	self.connect("body_exited", self, "_on_Station_body_exited")
+
 func is_path_valid(component):
 	print(str(self.expected_previous_paths))
 	print(component.path)

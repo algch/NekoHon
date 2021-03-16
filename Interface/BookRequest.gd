@@ -15,10 +15,14 @@ func _ready():
 	self.timer.set_autostart(true)
 	self.timer.connect("timeout", self, "_on_timer_timeout")
 	self.add_child(timer)
-	for component in self.order.components:
-		var image = TextureRect.new()
-		image.texture = component.texture
-		$VBoxContainer/HBoxContainer.add_child(image)
+	
+	var image = TextureRect.new()
+	image.texture = self.order.recipe.image
+	$VBoxContainer/HBoxContainer.add_child(image)
+	# for component in self.order.recipe.expected_paths:
+	# 	var image = TextureRect.new()
+	# 	image.texture = component.texture
+	# 	$VBoxContainer/HBoxContainer.add_child(image)
 
 	$Tween.interpolate_property($VBoxContainer/ProgressBar, "value", 100, 0, self.wait_time)
 	$Tween.start()
